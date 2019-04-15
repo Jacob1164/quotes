@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="/static/style.css" rel="stylesheet"/>
+
+        <!-- JQuery JS -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script src="/static/second.js"></script>
+
+        <script>
+            function check(num) {
+                var real = document.getElementById("number").value;
+                var str = "" + num;
+                var name = document.getElementById("nombre").value;
+                console.log(str);
+                if (num == real)
+                {
+                    document.getElementById("heading").style.color = "green";
+                    document.getElementById("heading").innerHTML = "Correct!";
+                    document.getElementById("message").style.color = "green";
+                    document.getElementById(str).className = "btn btn-success";
+                    document.getElementById("name").innerHTML = `<h4 color='green'>- ${name}</h4>`;
+                    document.getElementById("whole").style.display = "none";
+                    hold();
+                }
+                else
+                {
+                    document.getElementById("heading").style.color = "red";
+                    document.getElementById("heading").innerHTML = "Incorrect"
+                    document.getElementById(str).className = "btn btn-danger";
+                    setTimeout(clear, 1500);
+                }
+            }
+
+            function hold() {
+                document.getElementById("new").style.display = "none";
+                document.getElementById("message").innerHTML = "<form><button class='btn btn-success'>New Quote</button></form><br>";
+            }
+        </script>
+
+        <style>
+            main .form-control
+            {
+                /* center form controls */
+                display: inline-block;
+
+                /* override Bootstrap's 100% width for form controls */
+                width: auto;
+            }
+
+            main
+            {
+                /* scroll horizontally as needed */
+                overflow-x: auto;
+
+                /* center contents*/
+                text-align: center;
+            }
+
+            #left
+            {
+                text-align: left;
+            }
+
+            #long
+            {
+                width: 75%;
+            }
+        </style>
+
+        <link rel="shortcut icon" href="https://banner2.kisspng.com/20180507/cuw/kisspng-integral-symbol-mathematics-antiderivative-5af0fdba03b4d9.0364897215257430340152.jpg"/>
+
+        <title>{% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">Calc Quotes</a>
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="/entry">Entry</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/view">View Quotes</a></li>
+                    </ul>
+            </div>
+        </nav>
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+    </body>
+</html>

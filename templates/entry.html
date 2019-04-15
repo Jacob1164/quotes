@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}Entry{% endblock %}
+
+{% block main %}
+
+<h1>Quote Entry</h1>
+<h6>Don't put in quotation marks</h6>
+
+<!-- Enter quotes -->
+<form id="insert" action="/entry" method="post">
+    <div class="form-group"><input type="text" name="qt" class="form-control" placeholder="Quote" id="long"></input></div>
+    <div class="form-group"><select class="form-control" name="name">
+        <option selected disabled>Name</option>
+        <option>Mr. :Dillon</option>
+        <option>Nicholas Andrysiak</option>
+        <option>Josh Cowden</option>
+        <option>Alex Dosch</option>
+        <option>Jacob Frabutt</option>
+        <option>Bridget Goodwine</option>
+        <option>Emily Hall</option>
+        <option>Jonathan Liu</option>
+        <option>Adam Mazurek</option>
+        <option>Jacob Moon</option>
+        <option>Andrew Orians</option>
+        <option>Rebecca Pan</option>
+        <option>Elena Parial</option>
+        <option>Linh Phan</option>
+        <option>Bill Powers</option>
+        <option>Tomás Aguilar-Fraga</option>
+        <option>Mr. Wojtowicz</option>
+    </select></div>
+    <div class="form-group"><button type="submit" id="button" class="btn btn-primary">Enter</button></div>
+</form>
+
+{% endblock %}

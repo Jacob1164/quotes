@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}Calc Quotes{% endblock %}
+
+{% block main %}
+
+
+<h1>Calc Quotes</h1>
+
+<table class="table table-striped" id="left">
+    <thead>
+        <th>ID</th>
+        <th>Quote</th>
+        <th>Name</th>
+    </thead>
+    {% for row in rows %}
+    <tr>
+        <td>{{ row["id"] }}</td>
+        <td>"{{ row["string"] }}"</td>
+        <td>{{ row["name"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

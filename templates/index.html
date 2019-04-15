@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}Calc Quotes Game{% endblock %}
+
+{% block main %}
+
+
+<h1 id="heading">Guess that quote!</h1>
+<h2 id="buttons">"{{ quote }}"</h2>
+<div id="name"></div>
+<div id="message"></div>
+<input hidden id="number" value="{{ number }}"></input>
+<input hidden id="nombre" value="{{ name }}"></input>
+<div id="whole">
+    <table class="table" id="center">
+        <tr>
+            <td><button class="btn btn-primary" id="0" onclick="check(0);">Mr. :Dillon</button></td>
+            <td><button class="btn btn-primary" id="1" onclick="check(1);">Nicholas Andrysiak</button></td>
+            <td><button class="btn btn-primary" id="2" onclick="check(2);">Josh Cowden</button></td>
+            <td><button class="btn btn-primary" id="3" onclick="check(3);">Alex Dosch</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-primary" id="4" onclick="check(4);">Jacob Frabutt</button></td>
+            <td><button class="btn btn-primary" id="5" onclick="check(5);">Bridget Goodwine</button></td>
+            <td><button class="btn btn-primary" id="6" onclick="check(6);">Emily Hall</button></td>
+            <td><button class="btn btn-primary" id="7" onclick="check(7);">Jonathan Liu</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-primary" id="8" onclick="check(8);">Adam Mazurek</button></td>
+            <td><button class="btn btn-primary" id="9" onclick="check(9);">Jacob Moon</button></td>
+            <td><button class="btn btn-primary" id="10" onclick="check(10);">Andrew Orians</button></td>
+            <td><button class="btn btn-primary" id="11" onclick="check(11);">Rebecca Pan</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-primary" id="12" onclick="check(12);">Elena Parial</button></td>
+            <td><button class="btn btn-primary" id="13" onclick="check(13);">Linh Phan</button></td>
+            <td><button class="btn btn-primary" id="14" onclick="check(14);">Bill Powers</button></td>
+            <td><button class="btn btn-primary" id="15" onclick="check(15);">Tomás Aguilar-Fraga</button></td>
+        </tr>
+    </table>
+    <button class="btn btn-primary" id="16" onclick="check(16);">Mr. Wojtowicz</button>
+</div>
+<br>
+<br>
+<div id="new">
+    <form>
+        <button class="btn btn-success">New Quote</button>
+    </form>
+</div>
+
+
+
+
+{% endblock %}
